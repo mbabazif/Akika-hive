@@ -17,16 +17,15 @@
 <body>
     {% block content %} 
    
+<center>
+    <h3>Contact Form</h3>
 
-<h1>Contact Us</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="form-actions">
-      <button type="submit">Send</button>
-    </div>
-</form>
-
+    <form method="post" action="{% url 'contactus' %}">
+      {% csrf_token %}
+      <textarea name="message" placeholder="Message..."></textarea>
+      <input type="submit" />
+    </form>
+  </center>
 
     {%endblock%}
 

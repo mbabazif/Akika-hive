@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 
-from .views import emailView, successView
+from .views import contactus
 
 
 
@@ -23,11 +23,12 @@ urlpatterns=[
     url(r'^start$', views.start, name='start'),
     url(r'^about$', views.about, name='about'),
     url(r'^solutions$', views.solutions, name='solutions'),
-    url(r'^contact$', views.contact, name='contact'),
+    # url(r'^contact$', views.contact, name='contact'),
     url(r'^solution$', views.solution1, name='solution'),
     url(r'^enterpreneurship$', views.enterpreneurship, name='enterpreurship'), 
-    url('email/', emailView, name='email'),
-    url('success/', successView, name='success'),
+    url('contactus/', contactus, name='contactus'),
+    url('subscribe/', views.subscribe, name = 'subscribe'),
+    url('team/', views.team, name = 'team'),
     
 ]
 if settings.DEBUG:

@@ -1,13 +1,19 @@
 from django.shortcuts import render,redirect
-from .forms import StudentForm,FreelancerForm,EnterpriseForm,BusinessForm,AcademicForm,GovernmentForm,ContactForm
+from .forms import StudentForm,FreelancerForm,EnterpriseForm,BusinessForm,AcademicForm,GovernmentForm,ContactForm,Subscribe
 from django.contrib.auth.decorators import login_required
 
 from django.core.mail import send_mail
 from .models import Student
-from .forms import NewsLetterForm
 from django.http import HttpResponse, Http404,HttpResponseRedirect
+
 from django.core.mail import send_mail, BadHeaderError
 from .email import send_welcome_email
+from django.conf import settings
+from . import forms
+from akika.settings import EMAIL_HOST_USER
+
+
+
 
 
 
@@ -118,7 +124,7 @@ def business(request):
 
     else:
         form = BusinessForm()
-    return render(request, 'business.html', {"form": form})
+    return render(request, 'businessform.html', {"form": form})
 
 
 @login_required(login_url='/accounts/login/')
@@ -175,32 +181,40 @@ def solution1(request):
     return render(request, 'solution1.html')   
 
 
-def contact(request):
-    return render(request, 'contact.html')
+def contactus(request):
+
+	if request.method == 'POST':
+		message = request.POST['message']
+
+		send_mail('Contact Form',
+		 message, 
+		 settings.EMAIL_HOST_USER,
+		 ['umulisaa0@gmail.com'], 
+		 fail_silently=False)
+	return render(request, 'contact.html')
 
 
-def emailView(request):
-    if request.method == 'GET':
-        form = ContactForm()
-    else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            try:
-                send_mail(subject, message, email, ['tblaguese1@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect('success')
-    return render(request, "email.html", {'form': form})
-
-def successView(request):
-    return HttpResponse('Success! Thank you for your message.')
 def enterpreneurship(request):
     return render(request, 'enterpreneurship.html')
 
 
 
+    # Create your views here.
+def subscribe(request):
+    sub = forms.Subscribe()
+    if request.method == 'POST':
+        sub = forms.Subscribe(request.POST)
+        subject = 'Welcome to Akika-Bee-Hive'
+        message = 'Hope you are enjoying your journey with Akika-Bee-Hive'
+        recepient = str(sub['Email'].value())
+        send_mail(subject, 
+            message, EMAIL_HOST_USER, [recepient], fail_silently = False)
+        return render(request, 'subscribe/success.html', {'recepient': recepient})
+    return render(request, 'subscribe/index.html', {'form':sub})
+
+
+
+def team(request):
+    return render(request, 'team.html')
 
 

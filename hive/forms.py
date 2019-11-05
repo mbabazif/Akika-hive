@@ -54,7 +54,7 @@ class ContactForm(forms.Form):
     )                            
 
 
-
-class NewsLetterForm(forms.Form):
-    your_name = forms.CharField(label='First Name',max_length=30)
-    email = forms.EmailField(label='Email')
+class Subscribe(forms.Form):
+    Email = forms.EmailField()
+    def __str__(self):
+        return self.Email

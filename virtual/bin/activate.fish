@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/bayizere/Desktop/akika-web/virtual"
+set -gx VIRTUAL_ENV "/home/wecode/Desktop/assessment/akika-web/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

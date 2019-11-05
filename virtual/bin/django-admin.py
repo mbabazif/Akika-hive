@@ -1,4 +1,4 @@
-#!/home/bayizere/Desktop/akika-web/virtual/bin/python
+#!/home/wecode/Desktop/assessment/akika-web/virtual/bin/python
 from django.core import management
 
 if __name__ == "__main__":
