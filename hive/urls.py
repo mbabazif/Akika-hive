@@ -29,6 +29,7 @@ urlpatterns=[
     url('contactus/', contactus, name='contactus'),
     url('subscribe/', views.subscribe, name = 'subscribe'),
     url('team/', views.team, name = 'team'),
+    url('academics/', views.academics, name = 'academics'),
     
 ]
 if settings.DEBUG:

@@ -217,4 +217,7 @@ def subscribe(request):
 def team(request):
     return render(request, 'team.html')
 
+def academics(request):
+    return render(request, 'academic.html')
+
 

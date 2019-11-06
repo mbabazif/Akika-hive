@@ -1,43 +1,77 @@
-{% load bootstrap3 %} {% load staticfiles %}
+{%extends 'all-hive/base.html'%}
+
+{% load bootstrap3 %}
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+  {% block styles %}
 
-  <title>New Academic</title>
-  {{form.media}}
-
-{% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/basehive.css' %}"> {% endblock %}
-  <style> 
-    form {
-       width: 80%;
-       padding: 12px 20px;
-       margin: 30px 30px;
-       box-sizing: border-box;
-       border: none;
-       background-color: #3CBC8D;
-       color: white;
-     }
-     </style>
+    {% bootstrap_css %}
+    
+  {% endblock %}
 
 </head>
-
 <body>
+    {% block content %} 
+   
+             <div style="background-image: url(https://images.pexels.com/photos/267484/pexels-photo-267484.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940); background-size:cover; margin-top:-20px;">        
 
-  <form  action="{%url 'academic'%}" method="post" enctype="multipart/form-data">
-    {%csrf_token%}
+    
+                 <div class="container" >
 
-    {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Submit">
-  </form>
+                    <br>
+                    <h1 style="text-align:center;color: darkgoldenrod; font-weight: bold; font-family: 'Yeon Sung', cursive;">AKIKA-BEE-HIVE For Academics</h1>
+                     <br>
+                    <div class="row">
 
-   {% block scripts %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
 
+                            <p style="font-size: 20px;"><img src="https://icon-library.net/images/academic-icon/academic-icon-2.jpg" width="20px" height="20px">AKIKA-BEEHIVE are a medium for cooperation between
+                                high-schools and enterprises enhancing entrepreneurial skills in
+                                  &nbsp; students, stimulating students for generation of ideas and
+                                
+                                organisation of start-ups in future.</p> 
+                     </div><br>
+
+                      <div class="row">
+                            <p style="font-size: 20px;"><img src="https://icon-library.net/images/academic-icon/academic-icon-2.jpg" width="20px" height="20px">
+                                Open innovation platforms as an AKIKA-BEEHIVE tool attracting
+                                society, business and University staff and students, assist in the
+                                
+                                production of socially important projects.</p>    
+                        </div><br>
+
+
+
+                      <div class="row">
+                            <p style="font-size: 20px;"><img src="https://icon-library.net/images/academic-icon/academic-icon-2.jpg" width="20px" height="20px">Through the use of the platform Universities will be able to adapt
+                                their study programmes so that those will enable students to get
+                                better employment and the study programmes to get more market
+                                
+                                oriented.</p>       
+                    </div><br>
+
+                    <div class="row">
+                            <p style="font-size: 20px;"><img src="https://icon-library.net/images/academic-icon/academic-icon-2.jpg" width="20px" height="20px">AKIKA-BEEHIVE are therefore about strengthening high-schools
+                                and business relationships through intervening into the academic
+                                
+                                curriculum..</p>    
+                        </div><br>
+
+
+                  </div>
+
+                
+    {%endblock%}
+</div> 
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
 </body>
-
 </html>
