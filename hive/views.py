@@ -220,4 +220,35 @@ def team(request):
 def academics(request):
     return render(request, 'academic.html')
 
+def fintech(request):
+    return render(request, 'fintech.html')
+
+def software(request):
+    return render(request, 'software.html')    
+
+def enterpreneurs(request):
+    return render(request, 'enterpreneurs.html')
+def internet(request):
+    return render(request, 'internet.html')
+def cloudcomputing(request):
+    return render(request, 'cloud-computing.html')
+
+def machine(request):
+    return render(request, 'machine-learning.html')
+
+def robotics(request):
+    return render(request, 'robotics.html')
+def blockchain(request):
+    return render(request, 'blockchain.html')
+
+def security(request):
+    return render(request, 'cyber-security.html')
+
+
+
+
+
+    
+
+
 

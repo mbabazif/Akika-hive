@@ -30,7 +30,15 @@ urlpatterns=[
     url('subscribe/', views.subscribe, name = 'subscribe'),
     url('team/', views.team, name = 'team'),
     url('academics/', views.academics, name = 'academics'),
-    
+    url('fintech/', views.fintech, name = 'fintech'),
+    url('software/', views.software, name = 'software'),
+    url('enterpreneurs/', views.enterpreneurs, name = 'enterpreneurs'),
+    url('internet/', views.internet, name = 'internet'),
+    url('cloudcomputing/', views.cloudcomputing, name = 'cloudcomputing'),
+    url('machine/', views.machine, name = 'machine'),
+    url('robotics/', views.robotics, name = 'robotics'),
+    url('blockchain/', views.blockchain, name = 'blockchain'),
+    url('security/', views.security, name = 'security'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

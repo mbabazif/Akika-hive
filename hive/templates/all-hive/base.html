@@ -11,11 +11,12 @@
   <meta name="author" content="AKIKA-BEE-HIVE">
 
   {% if title %}
-  <title><link rel="icon" href="/media/image/logo.png" type="image/icon type"></title>
+	<title>Akika-Bee-Hive</title>
+	
   {% else %}
-    <title><link rel="icon" href="/media/image/logo.png" type="image/icon type"></title>
+    <title>Akika-Bee-Hive</title>
   {% endif %}
-
+	<link rel="icon" href="/media/image/logo.png" type="image/icon type">
   {% block styles %}
   {% bootstrap_css %}
 	<link rel="stylesheet" href="{% static 'css/basehive.css' %}">
@@ -97,8 +98,7 @@
 		<p class="footer-company-about">
 		<span>About the company</span>
     Akika-Bee-Hive is For leveraging cross capacity building between Students, Enterprises, Governments and Academics.
-		</p>
- 
+		</p>		
 		<div class="footer-icons">
  
 		<a href="#"><i class="fa fa-facebook"></i></a>
@@ -110,7 +110,6 @@
  
 		</div>
 		<a href="{% url 'subscribe' %}">subscribe</a>
- 
     </footer>
     
     <style>

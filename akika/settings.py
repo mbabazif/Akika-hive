@@ -94,8 +94,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'akikahive',
-        'USER': 'wecode',
-    'PASSWORD':'alicia',
+        'USER': 'florence',
+    'PASSWORD':'mba123456',
     }
 }
 
@@ -123,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'nl'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Africa/Kigali'
 
